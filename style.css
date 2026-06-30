@@ -1,0 +1,660 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=block');
+
+/* ============================================================
+   DESIGN TOKENS — American Broadsheet Newspaper
+   ============================================================ */
+:root {
+    --bg-paper: #FAFAF8;
+    --ink-black: #1a1a1a;
+    --ink-light: #444444;
+    --ink-faint: #666666;
+    --divider: #d0d0d0;
+    --divider-light: #e8e8e8;
+    --rule: #1a1a1a;
+    
+    --font-display: 'Playfair Display', 'Times New Roman', Times, serif;
+    --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+    
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 0.75rem;
+    --space-lg: 1.25rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    
+    --line-hair: 0.5px;
+    --line-thin: 1px;
+    --line-medium: 1.5px;
+    --line-thick: 3px;
+    --line-heavy: 6px;
+    
+    --page-margin: 2.5rem;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--ink-black);
+    background-color: var(--bg-paper);
+    overflow-x: hidden;
+}
+
+* {
+    border-radius: 0 !important;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink-black);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================================
+   BANNER / TICKER
+   ============================================================ */
+.banner {
+    background-color: var(--ink-black);
+    color: var(--bg-paper);
+    padding: var(--space-xs) 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: var(--line-thin) solid var(--divider);
+}
+
+.banner__track {
+    display: inline-flex;
+    animation: banner-scroll 35s linear infinite;
+}
+
+.banner__track span {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0 var(--space-md);
+}
+
+.banner__dot {
+    opacity: 0.4;
+    font-size: 0.5rem;
+    align-self: center;
+}
+
+@keyframes banner-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   MASTHEAD — Classic Newspaper Header
+   ============================================================ */
+.masthead {
+    text-align: center;
+    padding: var(--space-lg) var(--page-margin) var(--space-md);
+    border-bottom: var(--line-heavy) double var(--ink-black);
+    position: relative;
+}
+
+.masthead__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: var(--line-thin) solid var(--divider);
+}
+
+.masthead__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: var(--space-xs);
+}
+
+.masthead__tagline {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-light);
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.02em;
+}
+
+.masthead__nav,
+.masthead__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.masthead__nav {
+    padding: var(--space-sm) 0;
+    border-top: var(--line-thin) solid var(--divider);
+    border-bottom: var(--line-thin) solid var(--divider);
+    margin-bottom: var(--space-sm);
+}
+
+.masthead__nav a {
+    padding: var(--space-xs) var(--space-sm);
+    transition: background-color 0.15s ease;
+}
+
+.masthead__nav a:hover {
+    background-color: var(--ink-black);
+    color: var(--bg-paper);
+    text-decoration: none;
+}
+
+.masthead__social {
+    font-weight: 500;
+    font-size: 0.625rem;
+    color: var(--ink-faint);
+}
+
+.masthead__social a {
+    color: var(--ink-light);
+    transition: color 0.15s ease;
+}
+
+.masthead__social a:hover {
+    color: var(--ink-black);
+    text-decoration: underline;
+}
+
+.nav-divider {
+    color: var(--divider);
+    font-weight: 400;
+}
+
+/* ============================================================
+   SECTIONS — Newspaper Layout
+   ============================================================ */
+.section {
+    padding: var(--space-xl) var(--page-margin);
+    border-bottom: var(--line-thin) solid var(--divider);
+}
+
+.section__header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+}
+
+.section__kicker {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.5625rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #8B1E1E;
+    margin-bottom: var(--space-xs);
+}
+
+.section__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-transform: capitalize;
+}
+
+/* ============================================================
+   ABOUT — Image Left, Single Column Text Right
+   ============================================================ */
+.section--about {
+    max-width: 55rem;
+    margin: 0 auto;
+}
+
+.about__layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+.about__image {
+    border: var(--line-thin) solid var(--divider);
+}
+
+.about__image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    
+}
+
+.about__caption {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.5625rem;
+    font-style: italic;
+    color: var(--ink-faint);
+    padding: var(--space-xs) var(--space-sm);
+    border-top: var(--line-thin) solid var(--divider);
+    line-height: 1.4;
+}
+
+.about__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about__dateline {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-faint);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+    border-bottom: var(--line-thin) solid var(--divider-light);
+}
+
+.about__byline {
+    color: var(--ink-black);
+    font-weight: 700;
+}
+
+.about__statement {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--ink-black);
+}
+
+/* ============================================================
+   PROJECTS — Newspaper Story Cards
+   ============================================================ */
+.section--projects {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.projects__grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    border: var(--line-thin) solid var(--divider);
+    background-color: var(--bg-paper);
+    min-height: 200px;
+    transition: box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    box-shadow: 3px 3px 0px 0px var(--ink-black);
+    transform: translate(-1px, -1px);
+}
+
+.project-card__image {
+    overflow: hidden;
+    border-right: var(--line-thin) solid var(--divider);
+}
+
+.project-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card__content {
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.project-card__headline {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-xs);
+    letter-spacing: -0.01em;
+}
+
+.project-card__dateline {
+    font-family: var(--font-sans);
+    font-size: 0.5625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+    border-bottom: var(--line-thin) solid var(--divider-light);
+}
+
+.project-card__dateline span {
+    color: var(--ink-black);
+}
+
+.project-card__body {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    line-height: 1.65;
+    color: var(--ink-light);
+    margin-bottom: var(--space-sm);
+    flex: 1;
+}
+
+.project-card__tools {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--ink-faint);
+    padding-top: var(--space-xs);
+    border-top: var(--line-thin) solid var(--divider-light);
+}
+
+.project-card__tools strong {
+    color: var(--ink-black);
+    font-weight: 600;
+}
+
+/* ============================================================
+   SKILLS — Four-Column Newspaper Layout
+   ============================================================ */
+.section--skills {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.skills__layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: var(--line-thick) solid var(--ink-black);
+    border-bottom: var(--line-thick) solid var(--ink-black);
+}
+
+.skills__column {
+    padding: var(--space-md) var(--space-md);
+    border-right: var(--line-thin) solid var(--divider);
+}
+
+.skills__column:last-child {
+    border-right: none;
+}
+
+.skills__heading {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+    border-bottom: var(--line-medium) solid var(--ink-black);
+}
+
+.skills__list {
+    list-style: none;
+}
+
+.skills__list li {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    padding: var(--space-xs) 0;
+    border-bottom: var(--line-hair) solid var(--divider-light);
+    color: var(--ink-light);
+}
+
+.skills__list li:last-child {
+    border-bottom: none;
+}
+
+/* ============================================================
+   CONNECT — Newspaper Classified Style
+   ============================================================ */
+.section--connect {
+    max-width: 55rem;
+    margin: 0 auto;
+    border-bottom: none;
+}
+
+.connect__layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    border-top: var(--line-thick) solid var(--ink-black);
+    padding-top: var(--space-md);
+}
+
+.connect__body {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    font-style: italic;
+    color: var(--ink-light);
+}
+
+.connect__channels {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border-left: var(--line-thin) solid var(--divider);
+    padding-left: var(--space-lg);
+}
+
+.connect__channel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding-bottom: var(--space-sm);
+    border-bottom: var(--line-thin) solid var(--divider-light);
+}
+
+.connect__channel:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.connect__label {
+    font-family: var(--font-sans);
+    font-size: 0.5625rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+}
+
+.connect__value {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-black);
+    transition: color 0.15s ease;
+}
+
+.connect__value:hover {
+    color: var(--ink-light);
+    text-decoration: underline;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+    background-color: var(--ink-black);
+    color: var(--bg-paper);
+    padding: var(--space-md) var(--page-margin);
+    text-align: center;
+    border-top: var(--line-thick) double var(--ink-black);
+}
+
+.footer p {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    :root {
+        --page-margin: 1.25rem;
+        --space-xl: 1.5rem;
+        --space-lg: 1rem;
+    }
+    
+    .masthead__top {
+        font-size: 0.5625rem;
+    }
+    
+    .masthead__title {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+    }
+    
+    .masthead__nav,
+    .masthead__social {
+        font-size: 0.625rem;
+        flex-wrap: wrap;
+    }
+    
+    .about__layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .about__image {
+        max-width: 160px;
+        margin: 0 auto;
+    }
+    
+    .about__text {
+        column-count: 1;
+    }
+    
+    .project-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    
+    .project-card__image {
+        border-right: none;
+        border-bottom: var(--line-thin) solid var(--divider);
+        height: 180px;
+    }
+    
+    .skills__layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skills__column:nth-child(2) {
+        border-right: none;
+    }
+    
+    .skills__column:nth-child(3),
+    .skills__column:nth-child(4) {
+        border-top: var(--line-thin) solid var(--divider);
+    }
+    
+    .connect__layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .connect__channels {
+        border-left: none;
+        border-top: var(--line-thin) solid var(--divider);
+        padding-left: 0;
+        padding-top: var(--space-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .skills__layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills__column {
+        border-right: none;
+        border-bottom: var(--line-thin) solid var(--divider);
+    }
+    
+    .skills__column:last-child {
+        border-bottom: none;
+    }
+}
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .banner__track { animation: none; }
+    .project-card:hover { transform: none; box-shadow: none; }
+    * { transition-duration: 0.01ms !important; }
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: var(--line-medium) solid var(--ink-black);
+    outline-offset: 2px;
+}

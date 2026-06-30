@@ -1,0 +1,232 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samarth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Banner / Ticker -->
+    <div class="banner">
+        <div class="banner__track">
+            <span>SOFTWARE ENGINEER</span>
+            <span class="banner__dot">•</span>
+            <span>JAVA</span>
+            <span class="banner__dot">•</span>
+            <span>BACKEND</span>
+            <span class="banner__dot">•</span>
+            <span>DISTRIBUTED SYSTEM</span>
+            <span class="banner__dot">•</span>
+            <span>AI</span>
+            <span class="banner__dot">•</span>
+            <span>SYSTEM DESIGN</span>
+            <span class="banner__dot">•</span>
+            <span>SOFTWARE ENGINEER</span>
+            <span class="banner__dot">•</span>
+            <span>JAVA</span>
+            <span class="banner__dot">•</span>
+            <span>BACKEND</span>
+            <span class="banner__dot">•</span>
+            <span>DISTRIBUTED SYSTEM</span>
+            <span class="banner__dot">•</span>
+            <span>AI</span>
+            <span class="banner__dot">•</span>
+            <span>SYSTEM DESIGN</span>
+            <span class="banner__dot">•</span>
+        </div>
+    </div>
+
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="masthead__top">
+            <span class="masthead__edition">Vol. I, No. 1</span>
+            <span class="masthead__date">2026</span>
+            <span class="masthead__price">Portfolio Edition</span>
+        </div>
+        <h1 class="masthead__title">Samarth Chandra</h1>
+        <p class="masthead__tagline">Software Engineer . JAVA . Backend & Distributed Systems . AI .</p>
+        <nav class="masthead__nav" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <span class="nav-divider">|</span>
+            <a href="#projects">Projects</a>
+            <span class="nav-divider">|</span>
+            <a href="#skills">Skills</a>
+            <span class="nav-divider">|</span>
+            <a href="#connect">Connect</a>
+        </nav>
+        <div class="masthead__social">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">Github</a>
+            <span class="nav-divider">|</span>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">Linkedin</a>
+            <span class="nav-divider">|</span>
+            <a href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- index.html (About section only — replace the existing about section) -->
+<section class="section section--about" id="about" aria-labelledby="about-heading">
+    <div class="section__header">
+        <span class="section__kicker">Profile</span>
+        <h2 id="about-heading" class="section__title">About</h2>
+    </div>
+    <div class="about__layout">
+        <div class="about__image">
+            <img src="assets/profile.png" alt="Portrait of Samarth Chandra" loading="lazy">
+            <span class="about__caption">Samarth Chandra</span>
+        </div>
+        <div class="about__text">
+            <p class="about__dateline">By <span class="about__byline">Samarth Chandra</span> &nbsp;|&nbsp; Dev</p>
+            <p class="about__statement">
+                Software engineer working across Java, distributed systems, and AI. Building backend infrastructure, RAG systems, and cloud-native applications.
+            </p>
+        </div>
+    </div>
+</section>
+
+        <!-- Projects Section -->
+        <section class="section section--projects" id="projects" aria-labelledby="projects-heading">
+            <div class="section__header">
+                <span class="section__kicker">Works &</span>
+                <h2 id="projects-heading" class="section__title">Projects</h2>
+            </div>
+            <div class="projects__grid">
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="assets/abadp.png" alt="Automated Build & Deployment Pipeline" loading="lazy">
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__headline">Automated Build & Deployment Pipeline</h3>
+                        <p class="project-card__dateline">By <span>Samarth Chandra</span> &nbsp;|&nbsp; Infrastructure</p>
+                        <p class="project-card__body">A deployment pipeline that automates the complete application delivery workflow—from GitHub repository cloning and containerized builds to artifact generation and internet hosting. Features real-time build log streaming, isolated build environments, and unique subdomains for every deployed application.</p>
+                        <p class="project-card__tools"><strong>Tools:</strong> Node.js, AWS, Docker, PostgreSQL, Kafka</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="assets/mvaca.png" alt="Multimodal Video-ads Compliance Auditor" loading="lazy">
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__headline">Multimodal Video-ads Compliance Auditor</h3>
+                        <p class="project-card__dateline">By <span>Samarth Chandra</span> &nbsp;|&nbsp; AI & Compliance</p>
+                        <p class="project-card__body">A compliance auditing platform that reviews video ads against FTC advertising regulations, detects policy violations across speech, visuals, and on-screen text, and generates structured Pass/Fail verdicts with supporting evidence for every compliance decision.</p>
+                        <p class="project-card__tools"><strong>Tools:</strong> Python, RAG, LangGraph, Azure OpenAI, Azure Video Indexer</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="assets/vtp.png" alt="Video Transcoding Pipeline" loading="lazy">
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__headline">Video Transcoding Pipeline</h3>
+                        <p class="project-card__dateline">By <span>Samarth Chandra</span> &nbsp;|&nbsp; Media Processing</p>
+                        <p class="project-card__body">A video transcoding pipeline that processes uploaded videos into multiple resolutions and streaming-ready formats for seamless playback across devices. Features asynchronous job processing, background workers, and reliable media storage from ingestion to delivery.</p>
+                        <p class="project-card__tools"><strong>Tools:</strong> Node.js, Docker, AWS, FFmpeg</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__image">
+                        <img src="assets/p4ff.png" alt="Offline UPI Payment Network" loading="lazy">
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__headline">Offline UPI Payment Network</h3>
+                        <p class="project-card__dateline">By <span>Samarth Chandra</span> &nbsp;|&nbsp; Fintech</p>
+                        <p class="project-card__body">An offline UPI payment system that enables secure peer-to-peer transactions in disconnected environments by propagating encrypted payment packets across a mesh network. Delivers reliable, idempotent transaction settlement through internet-connected bridge nodes.</p>
+                        <p class="project-card__tools"><strong>Tools:</strong> Java, Spring Boot, Spring Data JPA, Hybrid Encryption</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section section--skills" id="skills" aria-labelledby="skills-heading">
+            <div class="section__header">
+                <span class="section__kicker">.</span>
+                <h2 id="skills-heading" class="section__title">Skills & Expertise</h2>
+            </div>
+            <div class="skills__layout">
+                <div class="skills__column">
+                    <h3 class="skills__heading">Languages</h3>
+                    <ul class="skills__list">
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </div>
+                <div class="skills__column">
+                    <h3 class="skills__heading">Backend & Frameworks</h3>
+                    <ul class="skills__list">
+                        <li>Spring Boot</li>
+                        <li>Node.js</li>
+                        <li>FastAPI</li>
+                        <li>WebSockets</li>
+                    </ul>
+                </div>
+                <div class="skills__column">
+                    <h3 class="skills__heading">AI</h3>
+                    <ul class="skills__list">
+                        <li>Agentic AI</li>
+                        <li>RAG</li>
+                        <li>LangChain</li>
+                        <li>LangGraph</li>
+                        <li>NLP</li>
+                        <li>MCP</li>
+                        <li>LLMs evaluation</li>
+                        <li>OpenAI/Claude SDKs</li>
+                    </ul>
+                </div>
+                <div class="skills__column">
+                    <h3 class="skills__heading">Data, Cloud & Infra</h3>
+                    <ul class="skills__list">
+                        <li>PostgreSQL</li>
+                        <li>Redis</li>
+                        <li>Kafka</li>
+                        <li>Docker</li>
+                        <li>AWS</li>
+                        <li>Kubernetes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect Section -->
+        <section class="section section--connect" id="connect" aria-labelledby="connect-heading">
+            <div class="section__header">
+                <span class="section__kicker">Connect</span>
+                <h2 id="connect-heading" class="section__title">Get in Touch</h2>
+            </div>
+            <div class="connect__layout">
+                <p class="connect__body">Always happy to connect and exchange ideas—whether it's tackling DSA problems, discussing the latest AI breakthroughs, exploring backend and distributed systems, or brainstorming exciting new projects. If you're building something interesting or just want to chat tech, my inbox is always open.</p>
+                <div class="connect__channels">
+                    <div class="connect__channel">
+                        <span class="connect__label">Email</span>
+                        <a href="mailto:hello@samarthchandra.com" class="connect__value">samarth.chandra07@gmail.com</a>
+                    </div>
+                    <div class="connect__channel">
+                        <span class="connect__label">LinkedIn</span>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="connect__value">https://www.linkedin.com/in/samarth-chandra-0a8b9b31b/</a>
+                    </div>
+                    <div class="connect__channel">
+                        <span class="connect__label">Instagram</span>
+                        <a href="https://www.instagram.com/samarth.chandra_" target="_blank" rel="noopener noreferrer" class="connect__value">@samarthchandra</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Samarth Chandra. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
