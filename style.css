@@ -45,7 +45,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 15px;
+    font-size: 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -278,7 +278,6 @@ img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    
 }
 
 .about__caption {
@@ -322,7 +321,7 @@ img {
 }
 
 /* ============================================================
-   PROJECTS — Newspaper Story Cards
+   PROJECTS — 3:2 Aspect Ratio Cards
    ============================================================ */
 .section--projects {
     max-width: 60rem;
@@ -335,12 +334,12 @@ img {
     gap: var(--space-lg);
 }
 
+/* Desktop: side-by-side with 3:2 image */
 .project-card {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: minmax(0, 1fr) 1.5fr;
     border: var(--line-thin) solid var(--divider);
     background-color: var(--bg-paper);
-    min-height: 200px;
     transition: box-shadow 0.2s ease;
 }
 
@@ -349,12 +348,23 @@ img {
     transform: translate(-1px, -1px);
 }
 
+/* Image container enforces 3:2 ratio */
 .project-card__image {
+    position: relative;
     overflow: hidden;
     border-right: var(--line-thin) solid var(--divider);
 }
 
+.project-card__image::before {
+    content: '';
+    display: block;
+    padding-top: 66.6667%; /* 2/3 = 3:2 aspect ratio */
+}
+
 .project-card__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -591,15 +601,18 @@ img {
         column-count: 1;
     }
     
+    /* Mobile: stack vertically, image stays 3:2 */
     .project-card {
         grid-template-columns: 1fr;
-        min-height: auto;
     }
     
     .project-card__image {
         border-right: none;
         border-bottom: var(--line-thin) solid var(--divider);
-        height: 180px;
+    }
+    
+    .project-card__image::before {
+        padding-top: 66.6667%; /* 3:2 ratio maintained */
     }
     
     .skills__layout {
